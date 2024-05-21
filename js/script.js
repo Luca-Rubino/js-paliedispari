@@ -15,4 +15,11 @@ function invertiParola(userWord) {
 
 }
 
+//confronto per vedere se il risulatato della funzione == alla parola
+if(userWord == userWordReversed){
+  console.log('la parola è palindroma')
+}else {
+  console.log('la parola non è palindroma')
+}
+
 console.log('Pari e dispari')
