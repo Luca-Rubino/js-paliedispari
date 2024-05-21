@@ -38,5 +38,7 @@ const userNum = Number.parseInt(prompt('inserisci un numero da 1 a 5'),10)
  * @returns numero casuale da 1 a 5
  */
 function random (max, min){
-    return  Math.floor(Math.random() * (max - min +1)) + min
+    return  Math.floor(Math.random() * (max - min + 1)) + min
 }
+
+console.log(random(1,5))
