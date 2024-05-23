@@ -31,7 +31,7 @@ console.log('Hai scelto' + ' ' + userChoice)
 
 // L’utente un numero da 1 a 5
 const userNum = Number.parseInt(prompt('inserisci un numero da 1 a 5'),10)
-
+console.log('Il numero scelto e\'' + ' ' + userNum)
 // genera un numero random (sempre da 1 a 5)
 
 /**
@@ -40,15 +40,35 @@ const userNum = Number.parseInt(prompt('inserisci un numero da 1 a 5'),10)
  * @param {minimo numero selezionabile} min 
  * @returns numero casuale da 1 a 5
  */
-function random (max, min){
+function randomNum(max, min){
     return  Math.floor(Math.random() * (max - min + 1)) + min
 }
 
-// risposta in console se il risultato è pari o dispari
-if(random(5,1) % 2 !== 0){
-  console.log('il numero e\' pari')
-}else{
-  console.log('il numero e\' Dispari')
+// assegnamo il numero random generato al pc
+const randomCpuNum = Number(randomNum(5,1))
+console.log('Il numero del pc e\'' + ' ' + randomNum(5,1))
+
+// sommiamo i numeri dell'utente e del computer
+let sommaNum = userNum + randomCpuNum
+
+// // risposta in console se il risultato è pari o dispari
+// if(random(5,1) % 2 !== 0){
+//   console.log('il numero e\' pari')
+// }else{
+//   console.log('il numero e\' Dispari')
+// }
+
+// Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
+function pariODispari(sommaNum, userChoice) {
+  // il parametro if risponde alla richiesta anche se ha valore pari e dispari invertiti
+  if ((sommaNum % 2 === 0 && userChoice === "dispari") || (sommaNum % 2 !== 0 && userChoice === "pari")) {
+    console.log("Hai vinto");
+  } else {
+    console.log("Hai perso");
+  }
+  let risultato
+  return risultato;
 }
 
-console.log(random(5,1))
+// Dichiariamo chi ha vinto.
+let risultato = pariODispari(sommaNum, userChoice);
