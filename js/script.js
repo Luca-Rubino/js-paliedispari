@@ -25,7 +25,10 @@ if(userWord == userWordReversed){
 console.log('Pari e dispari')
 
 // L’utente sceglie pari o dispari
-const userChoice = prompt('pari o dispari')
+let userChoice = prompt('pari o dispari')
+
+console.log('Hai scelto' + ' ' + userChoice)
+
 // L’utente un numero da 1 a 5
 const userNum = Number.parseInt(prompt('inserisci un numero da 1 a 5'),10)
 
@@ -33,12 +36,19 @@ const userNum = Number.parseInt(prompt('inserisci un numero da 1 a 5'),10)
 
 /**
  * 
- * @param {massimo numero selezionabile(5)} max 
- * @param {minimo numero selezionabile(1)} min 
+ * @param {massimo numero selezionabile} max 
+ * @param {minimo numero selezionabile} min 
  * @returns numero casuale da 1 a 5
  */
 function random (max, min){
     return  Math.floor(Math.random() * (max - min + 1)) + min
 }
 
-console.log(random(1,5))
+// risposta in console se il risultato è pari o dispari
+if(random(5,1) % 2 !== 0){
+  console.log('il numero e\' pari')
+}else{
+  console.log('il numero e\' Dispari')
+}
+
+console.log(random(5,1))
